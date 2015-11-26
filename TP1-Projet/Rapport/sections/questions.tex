@@ -1,9 +1,19 @@
-\section{Réponse aux questions et réflexion}
+\section{Réponse aux questions}
 \subsection{Question 1}
-\textbf{Donnée: }Expliquez avec vos mots, quelle est l’utilité de la « segue ».\\
-
+\textbf{Donnée: }Expliquez avec vos mots, quelle est l’utilité de la « segue ».\\\\
+Une segue est l'équivalent d'un intent dans Android, elle permet de passer des données entre différentes vues lors d'un changement de vue.
 \subsection{Question 2}
-\textbf{Donnée: }Expliquez comment réagit le « navigation controller » si la vue appelée est de type « show » ou « Present Modally».\\
+\textbf{Donnée: }Expliquez comment réagit le « navigation controller » si la vue appelée est de type « show » ou « Present Modally».\\\\
+\textbf{Show: } La nouvelle vue contient automatiquement une bar de navigation avec un bouton back et est ajoutée par défaut au navigation controller. Le bouton back est déjà implémenté et permet de revenir à la vue précédente.\\\\
+\textbf{Present modally:} affiche la nouvelle vue telle qu'elle est sans l'ajouter au navigation controller ou en lui ajoutant une barre de navigation. Si ce dernier élément est souhaité, il faudra également ajouter un navigation controller à la nouvelle vue.
 
 \subsection{Question 3}
-\textbf{Donnée: }Expliquez le cycle de vie des « view controller ».\\
+\textbf{Donnée: }Expliquez le cycle de vie des « view controller ».\\\\
+L'image ci-dessous présente graphiquement le cycle de vie des view controller. Les méthodes viewDid(Dis)Appear et viewWill(Dis)Appear sont gérées automatiquement. Elles se charge d'effectuer les opérations pour qu'une vue puisse apparaître/disparaître et de rendre (in)visible tous les éléments qu'elle contient. L'utilisateur peut seulement agir quand le controller est dans l'état appeared à l'aide de la méthode viewDidLoad(). On peut par exemple y définir l'état d'un bouton ou le texte d'un label.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=10cm]{img/viewLife.png}
+		\caption{Cycle de vie des view controller}
+		\label{lifeCycle}
+	\end{center}
+\end{figure}

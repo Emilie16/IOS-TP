@@ -1,4 +1,14 @@
 \section{Travail réalisé}
+Tous les points exigés par la donnée ont été réalisés. Les éléments suivants ont fait l'objet d'une recherche approfondie et ont été utilisés dans le projet:
+\begin{enumerate}
+	\item Stackview : équivalent aux LinearLayout d'Android
+	\item View controller : gère la navigation entre les vues
+	\item Optional types : si une variable n'est pas initialisée, elle contient nil
+	\item Table view : équivalent aux ListView d'Android
+	\item Protocol UITextFieldDelegate : Interface proposant des méthodes gérant le champ de texte.
+	\item unwind segue : permet de quitter une vue et de revenir à une autre en appelant une méthode spécifique de cette dernière.\\
+\end{enumerate}
+Cette image représente les deux vues de l'application développée.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=14cm]{img/simulator.png}
@@ -6,3 +16,6 @@
 		\label{vues}
 	\end{center}
 \end{figure}
+\textbf{Source de l'image !:\\}
+\url{http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2009/4/29/1240996556472/exclamation-001.jpg}\\\\
+\textbf{N.B :} A cause de l'implémentation du protocole UITextFieldDelegate, il est impératif d'appuyer sur la touche retour du clavier après avoir entrée le nom de la tâche. Sans cela, le bouton save ne devient pas actif.
