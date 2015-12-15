@@ -1,33 +1,22 @@
 \newpage 
 \section{Introduction}
-\subsection{Cas pratique}
-Dans ce travail pratique, nous devons créer une application permettant de gérer une To Do List. Deux vues seront créées. L'application pourra naviguer entre les deux.\\
-Dans la première vue, on retrouve une représentation des tâches
-existantes. Chaque entrée est constituée d’une image (« ! » ou vide ) ainsi que d’un descriptif de
-la tâche.\\
-L'autre vue permet l’ajout d’une nouvelle tâche dans la liste. Un bouton sert à indiquer si la tâche est urgente ou non, un champ de text permet de recevoir le nom de la tâche.\\
-L'image ci-dessous présente la solution de design proposée par la donnée.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{img/intro.png}
-		\caption{Vues de l'application}
-		\label{intro}
-	\end{center}
-\end{figure}
+\subsection{Cas pratiques}
+Ce projet est composé de deux cas pratiques distincts.
+\subsubsection{Cas pratique 1}
+Dans le premier cas pratique, il faut reprendre la To Do List du TP1. Elle va être complétée avec des options pour éditer les tâches et les supprimer.\\
+L'édition se fait lors d'un clique sur l'une des tâches de la liste.\\
+La suppression se fait avec un swipe ou à l'aide du bouton edit.\\
+Une autre option à implémenter est de sauvegarder les tâches dans une base de donnée pour qu'elles soient rechargés lors du prochain lancement de l'application.
+
+\subsubsection{Cas pratique 2}
+Dans ce cas pratique, il va falloir réaliser une vue qui permet de lire une vidéo. Il faudra également implémenter le swipe pour changer de vue et une toolbar sur l'écran principal.\\ La partie concernant la liste de musique et sa lecture n'a pas pu être implémentée, car nous ne disposons pas d'IPhone et le simulateur ne permet pas de générer la liste de musiques.
 
 \subsection{Buts}
 \begin{enumerate}
 	\item Se familiariser avec le langage swift
-	\item Utilisation de "Navigation Controller"
-	\item Comprendre le développement et déploiement d'application iOS.
-\end{enumerate}
-
-\subsection{Objectifs}
-\begin{enumerate}
-	\item Création de la vue pour l’ajout d’une tâche
-	\item Connecter la vue avec le "view controller" pour l’ajout et implémenter le contrôleur.
-	\item Création du modèle qui représente une tâche
-	\item Création de la vue pour lister les tâches
-	\item Connecter la vue avec le "table view controller" pour la gestion de la table et implémenter le contrôleur
-	\item  Mise en place de la navigation
+	\item Utiliser les identificateurs de segue
+	\item Utilisation de « gesture »
+	\item Créer une structure.
+	\item Utiliser le protocole NSCoding.
+	\item Utilisation de « MediaPlayer »
 \end{enumerate}

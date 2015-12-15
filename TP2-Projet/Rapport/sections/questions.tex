@@ -1,19 +1,39 @@
 \section{Réponse aux questions}
 \subsection{Question 1}
-\textbf{Donnée: }Expliquez avec vos mots, quelle est l’utilité de la « segue ».\\\\
-Une segue est l'équivalent d'un intent dans Android, elle permet de passer des données entre différentes vues lors d'un changement de vue.
+\textbf{Donnée: }Expliquez avec vos mots, quelle est l’utilité d’identifier la segue.\\\\
+Dans le projet, on a utilisé des segues "identifiées" dans les méthodes preparForSegue. Cela a permis en fonction de quelle segue a déclenché l'action de passer ou non des informations à la prochaine vue.
+
 \subsection{Question 2}
-\textbf{Donnée: }Expliquez comment réagit le « navigation controller » si la vue appelée est de type « show » ou « Present Modally».\\\\
-\textbf{Show: } La nouvelle vue contient automatiquement une bar de navigation avec un bouton back et est ajoutée par défaut au navigation controller. Le bouton back est déjà implémenté et permet de revenir à la vue précédente.\\\\
-\textbf{Present modally:} affiche la nouvelle vue telle qu'elle est sans l'ajouter au navigation controller ou en lui ajoutant une barre de navigation. Si ce dernier élément est souhaité, il faudra également ajouter un navigation controller à la nouvelle vue.
+\textbf{Donnée: }Expliquez l’utilité d’une « unwind segue ».\\\\
+Elle permet de quitter une vue et de revenir simplement à une autre en appelant une méthode spécifique de cette dernière. L'avantage est que l'on sait exactement à quel endroit du code on revient dans l'autre vue, cela permet de faire une action spécifique comme par exemple mettre à jour le contenu d'une TableView.
 
 \subsection{Question 3}
-\textbf{Donnée: }Expliquez le cycle de vie des « view controller ».\\\\
-L'image ci-dessous présente graphiquement le cycle de vie des view controller. Les méthodes viewDid(Dis)Appear et viewWill(Dis)Appear sont gérées automatiquement. Elles se charge d'effectuer les opérations pour qu'une vue puisse apparaître/disparaître et de rendre (in)visible tous les éléments qu'elle contient. L'utilisateur peut seulement agir quand le controller est dans l'état appeared à l'aide de la méthode viewDidLoad(). On peut par exemple y définir l'état d'un bouton ou le texte d'un label.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=10cm]{img/viewLife.png}
-		\caption{Cycle de vie des view controller}
-		\label{lifeCycle}
-	\end{center}
-\end{figure}
+\textbf{Donnée: }Expliquez avec vos mots, qu’est-ce qu’une structure.\\\\
+Une structure est semblable à une énumération. Ses propriétés sont semblables aux classes. Le différence est que la struct fonctionne par copie alors que les classes utilisent des références.
+
+\subsection{Question 4}
+\textbf{Donnée: }Expliquez le principe de « Convenience » avec vos propres mots.\\\\
+Le mot clé convenience est utilisé pour les initialisations de classes. Cela permet d'offrir à l'utilisateur plusieurs manière d'initialiser la classes en passant un nombre de paramètres variables et définir des valeurs par défaut. Voici un exemple plus parlant:
+\begin{lstlisting}
+init(content: String, sender: String, recipient: String)
+{
+	self.content = content
+	//Rule 1:  Calling designated Initializer from immediate superclass
+	super.init(sender: sender, recipient: recipient)
+}
+convenience init()
+{
+	//Rule 2:  Calling another initializer in same class
+	self.init(content: "")
+}
+convenience init(content: String)
+{
+	//Rule 2:  Calling another initializer in same class
+	self.init(content: content, sender: "Myself")
+}
+convenience init(content: String, sender: String)
+{
+	//Rule 2 and 3:  Calling the Designated Initializer in same class
+	self.init(content: content, sender: sender, recipient: sender)
+}
+\end{lstlisting}
